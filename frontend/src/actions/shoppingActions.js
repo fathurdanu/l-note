@@ -159,7 +159,7 @@ export const getOrdersByUserId = () => {
     // Success
     axios({
       method: "GET",
-      url: url + "/orders/",
+      url: url + "/orders",
       timeout: 5000,
       headers: {
         access_token: localStorage.getItem("access_token"),

@@ -191,7 +191,7 @@ class OrderController {
         ],
         where: { UserId: id },
       });
-      res.status(201).json(result);
+      res.status(200).json(result);
     } catch (err) {
       next(err);
     }

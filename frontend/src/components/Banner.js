@@ -19,8 +19,8 @@ function Banner() {
 
     return (
         <div className="relative h-full">
-            <div className="relative z-[2] text-lightColor container mx-auto h-screen flex justify-center pt-[20rem]">
-                <div className="w-full">
+            <div className="relative z-[2] text-lightColor mx-auto h-screen flex justify-center items-center">
+                <div className="w-9/12 pb-20">
                     <p className="text-center font-light text-5xl mb-5">Search</p>
                     <div className="flex justify-center items-center w-6/12 mx-auto rounded-md lg:h-[88px] px-1">
                         <div className="grid grid-cols-12 gap-[5px] rounded-md w-full h-14">

@@ -27,7 +27,6 @@ function Login() {
   }, [status]);
 
   const loginHandler = () => {
-    console.log(form)
     dispatch(login(form));
   }
 
@@ -72,7 +71,7 @@ function Login() {
           </div>
         </div>
       </div>
-      <div className="md:col-span-3 col-span-12 bg-trueDark flex justify-center text-lightColor">
+      <div className="md:col-span-3 col-span-12 bg-trueDark flex justify-center text-lightColor overflow-hidden">
         <div>
           <div className="flex justify-center">
             <img className="w-full object-cover" src={logo} />

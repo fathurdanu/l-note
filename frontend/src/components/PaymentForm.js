@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import axios from "axios";
 import Swal from "sweetalert2";
+import base_url from "../helpers/base_url";
 
 const CARD_OPTIONS = {
   iconStyle: "solid",
@@ -29,7 +30,7 @@ export default function PaymentForm(props) {
   const elements = useElements();
 
   const totalDue = props.totalDue;
-  const setIsPaid = props.setIsPaid 
+  const setIsPaid = props.setIsPaid
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -41,12 +42,12 @@ export default function PaymentForm(props) {
     if (!error) {
       try {
         const { id } = paymentMethod;
-        const response = await axios.post("http://localhost:3000/payment", {
+        const response = await axios.post(base_url + "/payment", {
           amount: totalDue * 100,
           id: id,
         });
         if (response.data.success) {
-          console.log("Successful Payment");
+          console.log(response.data.message);
           setSuccess(true);
           setIsPaid(true);
         }
@@ -66,15 +67,17 @@ export default function PaymentForm(props) {
     <>
       {!success ? (
         <form onSubmit={handleSubmit}>
-          <h1 className="text-center text-lg font-semibold pb-4">
+          <h1 className="text-center text-lg font-semibold">
             Input your Credit / Debit Card Number
           </h1>
-          <fieldset className="FormGroup">
-            <div className="FormRow text-darkColor">
+          <fieldset className="FormGroup pb-5">
+            <div className="FormRow text-darkColor border border-darkColor rounded-lg py-4">
               <CardElement options={CARD_OPTIONS} />
             </div>
           </fieldset>
-          <button className="stripe-btn">PAY</button>
+          <div className="w-full flex justify-center">
+            <button className="bg-darkColor rounded-lg text-lightColor text-2xl px-3 py-1">PAY</button>
+          </div>
         </form>
       ) : (
         <div>

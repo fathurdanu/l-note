@@ -19,7 +19,6 @@ const OrderDetailsPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const id = Number(useParams().id);
-  console.log(id);
 
   const { action, status, data } = useSelector(
     (state) => state.shoppingReducer
@@ -68,7 +67,6 @@ const OrderDetailsPage = () => {
 
   function closeModal() {
     setOpenModal(false);
-
   }
 
   const cancelOrderHandler = () => {
@@ -93,22 +91,24 @@ const OrderDetailsPage = () => {
       <Navbar />
       <div className="container mx-auto">
         <Modal
+          ariaHideApp={false}
           isOpen={openModal}
           onAfterOpen={afterOpenModal}
           style={customStyles}
           contentLabel="Example Modal"
         >
-          <StripeContainer setIsPaid={setIsPaid} totalDue={data.totalDue} />
-          <div align="center" className="py-5">
+          
+          <div align="right" className="mb-5">
             <button
-              className="bg-darkColor text-lightColor p-3 rounded font-semibold"
+              className="bg-darkColor text-lightColor py-1 px-3 rounded font-semibold"
               onClick={() => {
                 closeModal();
               }}
             >
-              Close
+              x
             </button>
           </div>
+          <StripeContainer setIsPaid={setIsPaid} totalDue={data.totalDue} />
         </Modal>
         {action === "GET_ORDER" && status === "data" && data !== "Loading" ? (
           <div className="w-full text-lightColor">
@@ -131,7 +131,7 @@ const OrderDetailsPage = () => {
             </div>
             <hr className="mx-24" />
             <div className="px-24 py-3">
-              <table className="w-full text-sm lg:text-base" cellspacing="0">
+              <table className="w-full text-sm lg:text-base" cellSpacing="0">
                 <thead>
                   <tr className="h-12 uppercase">
                     <th className="hidden md:table-cell"></th>
@@ -151,7 +151,7 @@ const OrderDetailsPage = () => {
                 <tbody>
                   {data.Products.map((product, index) => {
                     return (
-                      <tr>
+                      <tr key={index}>
                         <td className="hidden pb-4 md:table-cell">
                           <Link to="#">
                             <img

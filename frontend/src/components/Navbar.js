@@ -64,7 +64,7 @@ export default function Navbar() {
                 >
                   <i className="fab fa-pinterest text-lg leading-lg text-white opacity-75"></i>
                   <span className="ml-2">
-                    <img className="w-7 h-7" src={localStorage.image} />
+                    <img className="w-7 h-7 object-cover rounded-full border border-lightColor" src={localStorage.image} />
                   </span>
                 </button>
               </li>

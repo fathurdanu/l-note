@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { GiFruitBowl } from "react-icons/gi";
+import { BsLaptop } from "react-icons/bs";
 import { BsFillTrashFill, BsPencilSquare } from "react-icons/bs";
 import { FaShoppingCart } from "react-icons/fa";
 import CustomerRoutes from "../routes/CustomerRoutes";
@@ -128,7 +128,7 @@ function Popup({ setValue }) {
                                             <div key={index}>
                                                 <li className="my-2 flex">
                                                     <button className="flex items-center px-4 py-2 text-lightColor">
-                                                        <GiFruitBowl size={25} />
+                                                        <BsLaptop size={25} />
                                                         <span className="mx-4 font-medium">
                                                             {lineItem.Product.name}
                                                         </span>
