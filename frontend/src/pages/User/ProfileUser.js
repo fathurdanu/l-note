@@ -21,7 +21,7 @@ const ProfileUser = () => {
   return (
     (status === "data" && action === "GET_USER") ?
       (<div>
-        <div className="grid md:grid-cols-12 grid-cols-1 text-lightColor mx-auto w-8/12 gap-5">
+        <div className="grid md:grid-cols-12 grid-cols-1 text-lightColor mx-auto lg:w-8/12 w-11/12 gap-5">
 
           <div className="md:col-span-7 sm:col-span-12 flex justify-center items-center mb-10">
             <div className="">
@@ -48,18 +48,18 @@ const ProfileUser = () => {
             </div>
           </div>
 
-          <div className=" md:col-span-5 sm:col-span-12 p-5 mb-10">
+          <div className=" md:col-span-5 sm:col-span-12 py-5 mb-10">
             <h1 className="text-xl font-semibold pt-10 pb-5 text-center">
               User Description
             </h1>
             <div className="bg-midDarkColor h-[500px] p-5 rounded-md shadow-2xl shadow-black-600">
               <div>
-                <p className="text-md pb-4 text-5xl">
+                <p className="text-md pb-4 lg:text-5xl text-3xl">
                   @{data.username}
                 </p>
               </div>
               <hr className="border-t-2 py-3" />
-              <div className="grid grid-cols-2 h-[150px] gap-3">
+              <div className="grid grid-cols-2 h-[150px] gap-3 lg:mb-0 mb-7">
                 <div className="text-xl bg-lightColor text-darkColor p-5">
                   <p className="font-bold pb-2 pr-5">
                     <FaBirthdayCake />

@@ -24,7 +24,7 @@ function SideBarCMS() {
   return (
     <div className="">
       <aside
-        className={`flex border-r border-lightColor transform top-0 left-0 w-auto fixed h-screen ease-in-out transition-all duration-300 z-[3] -translate-x-20 hover:translate-x-0`}
+        className={`flex border-r border-lightColor transform top-0 left-0 w-auto fixed h-screen ease-in-out transition-all duration-300 z-[3] -translate-x-[76px] hover:translate-x-0`}
       >
         <div className="bg-darkColor">
 

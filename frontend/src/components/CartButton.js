@@ -11,9 +11,13 @@ function Cart() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (!localStorage.getItem("access_token")) { navigate("/login") };
+        if (localStorage.getItem("access_token") && localStorage.getItem("type") === "admin") {
+          navigate('/admin/dashboard');
+        } else if (!localStorage.getItem("access_token") || localStorage.getItem("type") !== "customer") {
+          navigate('/login')
+        }
         // dispatch(getCartByUserId());
-    }, []);
+      }, []);
 
     const cartHandler = () => {
         setCart(!cart);

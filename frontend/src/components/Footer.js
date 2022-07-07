@@ -37,7 +37,7 @@ function Footer() {
             <p>@copyright 2022 L-note</p>
           </div>
           <div></div>
-          <div className="flex justify-center items-center grid-cols-3 text-4xl space-x-1">
+          <div className="flex justify-center items-center grid-cols-3 lg:text-4xl text-2xl space-x-1">
             <div className="">
               <AiFillInstagram />
             </div>
