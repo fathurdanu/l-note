@@ -65,14 +65,14 @@ const HomePage = () => {
       {/* <div className=" h-[200px]">
       </div> */}
 
-      {action === "GET_ALL_PRODUCTS" && status === "data" ? (
+      {/* {action === "GET_ALL_PRODUCTS" && status === "data" ? (
         <div className="pb-5 bg-secondColor">
           <div className="text-center font-light text-darkColor lg:text-8xl text-5xl pt-20 pb-10 px-10">Products</div>
           <CardContainerUser data={data.filter((product, index) => index < 5)} />
         </div>
       ) : (
         action === "GET_ALL_PRODUCTS" && status === "loading"
-      ) ? "loading" : ""}
+      ) ? "loading" : ""} */}
     </div>
   );
 };

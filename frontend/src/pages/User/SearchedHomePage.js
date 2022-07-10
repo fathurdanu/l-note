@@ -59,7 +59,7 @@ const SearchedHomePage = () => {
         ) : action === "GET_ALL_PRODUCTS" && status === "data" && query !== "all" ? (
           <CardContainerUser
             data={data.filter((product) =>
-              product.name.toLowerCase().includes(query.toLowerCase()) || product.category.toLowerCase().includes(query.toLowerCase())
+              product.name.toLowerCase().match(query.toLowerCase().replace("-","|")) || product.category.toLowerCase().match(query.toLowerCase().replace("-","|")) || product.desc.toLowerCase().match(query.toLowerCase().replace("-","|"))
             )}
           />
         ) : (

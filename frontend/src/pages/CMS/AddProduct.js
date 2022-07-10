@@ -23,7 +23,7 @@ function AddProduct() {
     stock: 0,
     brand: "",
     weight: 0,
-    category: "",
+    category: "business",
     condition: "new",
   });
 
@@ -162,6 +162,9 @@ function AddProduct() {
             </label>
             <input
               type="number"
+              min="0"
+              maxLength="1000000000"
+              step="1000000"
               className="border hover:border-green-800 focus:border-darkColor p-2 rounded-md bg-lightColor w-full"
               onChange={(e) => setForm({ ...form, price: e.target.value })}
             ></input>
@@ -172,6 +175,7 @@ function AddProduct() {
             </label>
             <input
               type="number"
+              min="0"
               className="border hover:border-green-800 focus:border-darkColor p-2 rounded-md bg-lightColor w-full"
               onChange={(e) => setForm({ ...form, stock: e.target.value })}
             ></input>
@@ -192,6 +196,7 @@ function AddProduct() {
             </label>
             <input
               type="number"
+              min="0"
               className="border hover:border-green-800 focus:border-darkColor p-2 rounded-md bg-lightColor w-full"
               onChange={(e) => setForm({ ...form, weight: e.target.value })}
             ></input>
@@ -200,14 +205,18 @@ function AddProduct() {
             <label className="block text-darkColor text-lg font-bold pb-2">
               Category
             </label>
-            <input
+            <select
               type="text"
               className="border hover:border-green-800 focus:border-darkColor p-2 rounded-md bg-lightColor w-2/5"
               name="category"
               id="category"
               onChange={(e) => setForm({ ...form, category: e.target.value })}
             >
-            </input>
+              <option value="business">Business</option>
+              <option value="artist">Artist</option>
+              <option value="gaming">Gaming</option>
+              <option value="school">School</option>
+            </select>
           </div>
           <div className="px-5 py-2">
             <label className="block text-darkColor text-lg font-bold pb-2">
